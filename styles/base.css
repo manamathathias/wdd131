@@ -100,7 +100,7 @@ main h1 {
 .card h3 {
   margin: 0;
   padding: 0.8rem;
-  background: linear-gradient(135deg, var(--dark-green), var(--green));
+  background: linear-gradient(135deg, var(--dark-green), var(--green)); background-color: var(--dark-green);
   color: #fff;
   text-align: center;
   font-size: 1.2rem;

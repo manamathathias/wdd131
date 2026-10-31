@@ -3,11 +3,11 @@
   --dark-green: #064d2a;
   --mint: #e3f4e8;
   --lime: #8bc34a;
-  --teal: #1b998b;
+  --teal: #0f766e;
   --gold: #d4a62a;
   --border: #b9d3c1;
   --text: #1e2a22;
-  --font: "Times New Roman", Times, serif;
+  --font: "Tinos", "Times New Roman", Times, serif;
 }
 
 * {
@@ -25,15 +25,17 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--dark-green), var(--green));
-  padding: 1.1rem 1rem;
-  text-align: center;
+  background-color: var(--dark-green);
+  background-image: linear-gradient(135deg, var(--dark-green), var(--green));
   border-bottom: 4px solid var(--gold);
 }
 
-header h1 {
-  margin: 0;
+#course-title {
+  display: block;
+  padding: 1.1rem 1rem;
+  text-align: center;
   font-size: 1.6rem;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
 }
@@ -70,7 +72,7 @@ main {
   margin: 0 auto 2rem;
 }
 
-main h2 {
+main h1 {
   margin: 1.2rem 0;
   text-align: center;
   font-size: 2.3rem;

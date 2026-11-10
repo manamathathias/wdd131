@@ -1,0 +1,63 @@
+/* Large Screen View */
+
+@media screen and (min-width: 700px) {
+
+    /* Header */
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+    }
+
+    .header-content {
+        width: auto;
+    }
+
+    header h2 {
+        font-size: 2rem;
+    }
+
+    /* Hide Hamburger Menu */
+
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation */
+
+    nav {
+        margin-top: 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .menu li {
+        padding: 10px;
+    }
+
+    .menu a {
+        font-size: 1rem;
+    }
+
+    /* Temple Grid */
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    figure img {
+        height: 220px;
+    }
+
+    main {
+        padding: 35px 20px;
+    }
+
+}

@@ -1,0 +1,246 @@
+/* ===========================
+   Global variables
+   =========================== */
+:root {
+  --color-bg: #f6f3ec;
+  --color-surface: #ffffff;
+  --color-green-deep: #0b4228;
+  --color-green: #156b3e;
+  --color-gold: #c9a227;
+  --color-text: #1c2a22;
+  --color-text-muted: #5a6b60;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+
+  --radius: 6px;
+}
+
+/* ===========================
+   Base
+   =========================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  color: var(--color-green-deep);
+  line-height: 1.15;
+  margin: 0 0 var(--space-sm);
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: var(--color-green);
+}
+
+/* ===========================
+   Header
+   =========================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-green-deep);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.wordmark span {
+  color: var(--color-gold);
+}
+
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: var(--space-md);
+  font-size: 0.95rem;
+}
+
+.site-header nav a:hover {
+  color: var(--color-gold);
+}
+
+/* ===========================
+   Hero
+   =========================== */
+.hero {
+  position: relative;
+}
+
+.hero picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  padding: var(--space-md);
+  background-color: var(--color-green-deep);
+  color: #fff;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.tagline {
+  color: var(--color-gold);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ===========================
+   Intro / general sections
+   =========================== */
+main section {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.intro {
+  background-color: var(--color-surface);
+}
+
+/* ===========================
+   Weather section
+   =========================== */
+.weather-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid #e3ddce;
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.weather-icon-mobile {
+  flex-shrink: 0;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin: 0;
+  width: 100%;
+}
+
+.weather-stats dt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.weather-stats dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===========================
+   Facts
+   =========================== */
+.facts-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.facts-grid li {
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-gold);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.facts-grid strong {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.site-footer {
+  text-align: center;
+  padding: var(--space-md);
+  background-color: var(--color-green-deep);
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* ===========================
+   Wider view (tablet and up)
+   =========================== */
+@media (min-width: 700px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(11, 66, 40, 0.85);
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  main section {
+    padding: var(--space-lg) var(--space-lg);
+  }
+
+  /* Swap the mobile SVG icon for an emoticon pseudo-element
+     placed right after the "Weather" heading */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  .weather-heading::after {
+    content: " \26C5"; /* ⛅ */
+    margin-left: 0.5rem;
+  }
+
+  .weather-card {
+    max-width: 600px;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

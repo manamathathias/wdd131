@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nigeria — The Giant of Africa</title>
+  <meta name="description" content="A look at Nigeria: Lagos, climate, and culture." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="wordmark">naija<span>.notes</span></p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#weather">Weather</a>
+      <a href="#facts">Facts</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <picture>
+        <source media="(min-width: 700px)" srcset="images/nigeria-wide.webp" />
+        <img
+          src="images/nigeria-small.webp"
+          alt="Lagos skyline along the lagoon at sunset"
+          width="400"
+          height="300"
+        />
+      </picture>
+      <div class="hero-text">
+        <h1>Nigeria</h1>
+        <p class="tagline">The Giant of Africa</p>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <h2>About This Place</h2>
+      <p>
+        Nigeria sits on the Gulf of Guinea in West Africa, home to more than
+        200 ethnic groups and over 500 languages. Lagos, its largest city, is
+        one of the fastest-growing urban centers on the continent &mdash; a
+        restless mix of markets, music, and new ideas pressed against the
+        Atlantic coast.
+      </p>
+    </section>
+
+    <section class="weather" id="weather">
+      <h2 class="weather-heading">Weather</h2>
+      <div class="weather-card">
+        <img
+          class="weather-icon-mobile"
+          src="images/weather-icon.svg"
+          alt="Partly cloudy sky icon"
+          width="48"
+          height="48"
+        />
+        <dl class="weather-stats">
+          <div>
+            <dt>Location</dt>
+            <dd>Lagos, Nigeria</dd>
+          </div>
+          <div>
+            <dt>Temperature</dt>
+            <dd><span id="temp">29</span>&deg;C</dd>
+          </div>
+          <div>
+            <dt>Wind Speed</dt>
+            <dd><span id="wind">6</span> km/h</dd>
+          </div>
+          <div>
+            <dt>Wind Chill</dt>
+            <dd id="windchill">Calculating&hellip;</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="facts" id="facts">
+      <h2>Quick Facts</h2>
+      <ul class="facts-grid">
+        <li><strong>Capital</strong><span>Abuja</span></li>
+        <li><strong>Largest City</strong><span>Lagos</span></li>
+        <li><strong>Official Language</strong><span>English</span></li>
+        <li><strong>Currency</strong><span>Naira (&#8358;)</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Mathias Abbas Nyako</p>
+    <p>Last Updated: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>

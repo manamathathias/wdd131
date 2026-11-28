@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the principles of useful, responsive, and accessible web design.">
+  <meta name="author" content="Mathias Abbas Nyako">
+  <title>PixelCraft Studio | Web Design</title>
+  <link rel="stylesheet" href="styles/site.css">
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">PixelCraft<span> Studio</span></a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a aria-current="page" href="web-design.html">Web Design</a>
+      <a href="photography.html">Photography</a><a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">DIGITAL WEB DESIGN</p>
+      <h1>Make every visit clear and useful.</h1>
+      <p>A good website helps people find information, understand an organization, and take the next step with confidence.</p>
+    </section>
+    <section class="content-layout">
+      <img class="feature-image" src="images/web-layout.svg" alt="A sample responsive website layout">
+      <div>
+        <h2>Principles of a helpful website</h2>
+        <ul class="feature-list">
+          <li><strong>Clarity:</strong> Use meaningful headings and concise content so visitors understand the page.</li>
+          <li><strong>Consistency:</strong> Keep navigation, colors, spacing, and typography familiar across pages.</li>
+          <li><strong>Accessibility:</strong> Provide descriptive alternative text, readable contrast, and keyboard-friendly controls.</li>
+          <li><strong>Responsiveness:</strong> Design layouts that adapt to phones, tablets, laptops, and larger screens.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section soft-panel">
+      <h2>A simple planning checklist</h2>
+      <div id="design-tips" class="tip-grid" aria-live="polite"></div>
+      <p class="small-note">Choose a tip to save it on this device.</p>
+      <p id="saved-tip" class="status-message" aria-live="polite">No saved tip yet.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> PixelCraft Studio · Created by Mathias Abbas Nyako</p><a href="references.html">References</a>
+  </footer>
+</body>
+</html>

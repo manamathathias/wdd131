@@ -1,0 +1,95 @@
+// PixelCraft Studio interactive features
+const menuButton = document.querySelector(".menu-button");
+const navigation = document.querySelector(".site-nav");
+
+function updateYear() {
+  const yearElement = document.querySelector("#year");
+  if (yearElement) {
+    yearElement.textContent = `${new Date().getFullYear()}`;
+  }
+}
+
+function setupNavigation() {
+  if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", `${isOpen}`);
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+  }
+}
+
+const designTips = [
+  { title: "Plan the page", detail: "Decide what visitors need to know and do before arranging the content." },
+  { title: "Keep it readable", detail: "Use clear headings, short paragraphs, and comfortable text sizes." },
+  { title: "Design for every screen", detail: "Test the layout on a narrow phone and a wide desktop display." },
+  { title: "Check accessibility", detail: "Use meaningful alternative text, strong contrast, and keyboard access." }
+];
+
+function renderDesignTips() {
+  const tipContainer = document.querySelector("#design-tips");
+  if (!tipContainer) return;
+
+  tipContainer.innerHTML = designTips.map((tip, index) => `
+    <article class="tip-card">
+      <h3>${tip.title}</h3>
+      <p>${tip.detail}</p>
+      <button type="button" data-tip-index="${index}">Save this tip</button>
+    </article>
+  `).join("");
+
+  tipContainer.addEventListener("click", (event) => {
+    const selectedButton = event.target.closest("button[data-tip-index]");
+    if (!selectedButton) return;
+
+    const chosenTip = designTips[Number(selectedButton.dataset.tipIndex)];
+    localStorage.setItem("pixelcraftSavedTip", JSON.stringify(chosenTip));
+    displaySavedTip();
+  });
+}
+
+function displaySavedTip() {
+  const savedTipElement = document.querySelector("#saved-tip");
+  if (!savedTipElement) return;
+
+  const savedTip = JSON.parse(localStorage.getItem("pixelcraftSavedTip"));
+  if (savedTip) {
+    savedTipElement.textContent = `Saved tip: ${savedTip.title} — ${savedTip.detail}`;
+  } else {
+    savedTipElement.textContent = "No saved tip yet.";
+  }
+}
+
+function setupContactForm() {
+  const form = document.querySelector("#contact-form");
+  const response = document.querySelector("#form-message");
+  if (!form || !response) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      response.textContent = "Please complete every field with valid information.";
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const inquiry = {
+      name: formData.get("fullName").trim(),
+      email: formData.get("email").trim(),
+      interest: formData.get("interest"),
+      message: formData.get("message").trim()
+    };
+
+    localStorage.setItem("pixelcraftLastInquiry", JSON.stringify(inquiry));
+    response.textContent = `Thank you, ${inquiry.name}. Your ${inquiry.interest.toLowerCase()} inquiry has been saved in this browser. This demonstration does not send email.`;
+    form.reset();
+  });
+}
+
+updateYear();
+setupNavigation();
+renderDesignTips();
+displaySavedTip();
+setupContactForm();

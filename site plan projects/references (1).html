@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact PixelCraft Studio with a web design or photography question.">
+  <meta name="author" content="Mathias Abbas Nyako">
+  <title>PixelCraft Studio | Contact</title>
+  <link rel="stylesheet" href="styles/site.css">
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">PixelCraft<span> Studio</span></a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="web-design.html">Web Design</a>
+      <a href="photography.html">Photography</a><a aria-current="page" href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h1>Tell us what you are creating.</h1>
+      <p>Use the form below to share a question or describe the kind of creative support you are looking for.</p>
+    </section>
+    <section class="form-section">
+      <form id="contact-form">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="fullName" type="text" autocomplete="name" required minlength="2">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="interest">What are you interested in?</label>
+        <select id="interest" name="interest" required>
+          <option value="">Choose a topic</option>
+          <option value="Web design">Web design</option>
+          <option value="Photography">Photography</option>
+          <option value="Both services">Both services</option>
+          <option value="General question">General question</option>
+        </select>
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+        <button class="button" type="submit">Send inquiry</button>
+        <p id="form-message" class="status-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="small-note">This student project demonstrates form validation and saves a local confirmation in your browser. It does not send email to a server.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> PixelCraft Studio · Created by Mathias Abbas Nyako</p><a href="references.html">References</a>
+  </footer>
+</body>
+</html>

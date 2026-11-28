@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit a review for a product, including its rating, installation date, and useful features.">
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+  <header>
+    <h1>Product Review</h1>
+  </header>
+
+  <main>
+    <form method="get" action="review.html">
+      <p class="required-note"><span class="req">*</span> Required field</p>
+
+      <div class="field">
+        <label for="product">Product Name <span class="req">*</span></label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </div>
+
+      <fieldset class="field">
+        <legend>Overall Rating <span class="req">*</span></legend>
+        <!-- Stars are in reverse DOM order so the CSS sibling selector can fill them left to right -->
+        <div class="stars">
+          <input type="radio" id="rate5" name="rating" value="5" class="sr-only" required>
+          <label for="rate5"><span class="sr-only">5 stars</span></label>
+
+          <input type="radio" id="rate4" name="rating" value="4" class="sr-only">
+          <label for="rate4"><span class="sr-only">4 stars</span></label>
+
+          <input type="radio" id="rate3" name="rating" value="3" class="sr-only">
+          <label for="rate3"><span class="sr-only">3 stars</span></label>
+
+          <input type="radio" id="rate2" name="rating" value="2" class="sr-only">
+          <label for="rate2"><span class="sr-only">2 stars</span></label>
+
+          <input type="radio" id="rate1" name="rating" value="1" class="sr-only">
+          <label for="rate1"><span class="sr-only">1 star</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="install-date">Date of Installation <span class="req">*</span></label>
+        <input type="date" id="install-date" name="installDate" required>
+      </div>
+
+      <fieldset class="field checks">
+        <legend>Useful Features <span class="hint">(select all that apply)</span></legend>
+        <label for="feat-setup"><input type="checkbox" id="feat-setup" name="features" value="easy-setup"> Easy setup</label>
+        <label for="feat-battery"><input type="checkbox" id="feat-battery" name="features" value="battery-life"> Battery life</label>
+        <label for="feat-display"><input type="checkbox" id="feat-display" name="features" value="display"> Display quality</label>
+        <label for="feat-support"><input type="checkbox" id="feat-support" name="features" value="support"> Customer support</label>
+      </fieldset>
+
+      <div class="field">
+        <label for="review">Written Review <span class="hint">(optional)</span></label>
+        <textarea id="review" name="review" rows="5"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="user-name">Your Name <span class="hint">(optional)</span></label>
+        <input type="text" id="user-name" name="userName" autocomplete="name">
+      </div>
+
+      <input type="submit" value="Submit Review">
+    </form>
+  </main>
+
+  <footer>
+    <p>©2026 Mathias Abbas Nyako</p>
+    <p>Nigeria</p>
+    <p>Last Modification: 11/28/2026</p>
+  </footer>
+
+  <script src="scripts/form.js"></script>
+</body>
+</html>
